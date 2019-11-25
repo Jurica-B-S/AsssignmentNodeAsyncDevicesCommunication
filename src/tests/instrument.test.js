@@ -64,5 +64,20 @@ describe("Check events incoming commands to Instrument", () => {
     );
   });
 });
-
-describe("Check incoming commands writing to Screen", () => {});
+describe("Check simulation of states of the Instrument", () => {
+  test(`Cheking return values of getRandomStateOffApp() method`, () => {
+    expect(instrument.getRandomStateOffApp()).toMatch(
+      /^stable|overload|underload|busy$/
+    );
+    expect(instrument.getRandomStateOffApp()).toMatch(
+      /^stable|overload|underload|busy$/
+    );
+    expect(instrument.getRandomStateOffApp()).toMatch(
+      /^stable|overload|underload|busy$/
+    );
+    expect(instrument.getRandomStateOffApp()).toMatch(
+      /^stable|overload|underload|busy$/
+    );
+    expect(instrument.getRandomStateOffApp()).not.toMatch(/^somethinWrong$/);
+  });
+});
